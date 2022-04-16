@@ -11,7 +11,7 @@
   - name: copy vim rc
     copy:
       src: configs/.vimrc
-      dest: /home/pablo/ force=no
+      dest: /home/pablo/.vimrc force=no
       owner: pablo
       group: pablo
 
@@ -31,8 +31,10 @@
 
   - name: copy rtorrent configs
     copy:
-      src: configs/.rottorent.rc
-      dest: /home/pablo/ force=no 
+      src: configs/.rtorrent.rc
+      dest: /home/pablo/.rtorrent.rc
+      owner: pablo
+      group: pablo
 
 
 
