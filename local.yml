@@ -14,3 +14,16 @@
       dest: /home/pablo/
       owner: pablo
       group: pablo
+
+  - name: make vim plugin folder
+    file:
+      path: /home/pablo/.vim/autoload
+      state: directory
+
+
+
+
+
+
+
+
