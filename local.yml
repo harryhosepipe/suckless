@@ -36,5 +36,9 @@
       owner: pablo
       group: pablo
 
-
+  - name: make rtorrent folders
+    file:
+      path: /home/pablo/Downloads/T2D
+      path: /home/pablo/Downloads/TORRENTS
+      state: directory
 
