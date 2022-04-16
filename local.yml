@@ -7,9 +7,10 @@
   - name: Setup Vim 
     package:
       name: vim
+  
   - name: copy vim rc
     copy:
       src: configs/.vimrc
-      dest: ~/
+      dest: /home/pablo/
       owner: pablo
       group: pablo
