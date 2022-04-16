@@ -4,6 +4,12 @@
   become: true
 
   tasks:
-  - name: install htop
+  - name: Setup Vim 
     package:
-      name: htop
+      name: vim
+  - name: copy vim rc
+    copy:
+      src: configs/.vimrc
+      dest: ~/
+      owner: pablo
+      group: pablo
