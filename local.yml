@@ -11,7 +11,7 @@
   - name: copy vim rc
     copy:
       src: configs/.vimrc
-      dest: /home/pablo/
+      dest: /home/pablo/ force=no
       owner: pablo
       group: pablo
 
@@ -20,8 +20,9 @@
       path: /home/pablo/.vim/autoload
       state: directory
 
-
-
+  - name: download vim plugin manager
+    get_url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/plug.vim
 
 
 
