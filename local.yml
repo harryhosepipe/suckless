@@ -19,11 +19,15 @@
     file:
       path: /home/pablo/.vim/autoload
       state: directory
+      owner: pablo
+      group: pablo
 
   - name: download vim plugin manager
     get_url:
       url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
       dest: /home/pablo/.vim/autoload/plug.vim
+      owner: pablo
+      group: pablo
 
   - name: setup rtorrent
     package:
@@ -38,7 +42,21 @@
 
   - name: make rtorrent folders
     file:
-      path: /home/pablo/Downloads/T2D
-      path: /home/pablo/Downloads/TORRENTS
+      path: /home/pablo/Downloads/rdown
+      path: /home/pablo/Downloads/rsession
+      path: /home/pablo/Downloads/rwatch
       state: directory
 
+# symlink example
+#
+#  - name: smylink demo
+#    hosts: all
+#    vars:
+#      mysrc: "~/slingshot"
+#      mydes: "~/"
+#    tasks:
+#      -name: create symlink
+#       ansible.builtin.file:
+#         src: "{{ mysrc }}
+#         dest: "{{ mydes }}"
+#         state: link
