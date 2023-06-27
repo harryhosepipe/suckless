@@ -25,3 +25,18 @@
         shell:
           cmd: "source /home/pablo/.bashrc"
 
+      - name: Update package cache
+        pacman:
+          update_cache: yes
+
+      - name: Install OpenSSH
+        pacman:
+          name: openssh
+          state: present
+
+      - name: Start and enable OpenSSH service
+        systemd:
+          name: sshd
+          state: started
+          enabled: yes
+
