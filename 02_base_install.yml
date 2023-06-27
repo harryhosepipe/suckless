@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  become: true
+    
+  tasks:
+    - name: Install Base
+      pacman:
+        name:
+          - wget
+          - git
+          - curl
+          - gnupg
+          - fontconfig
+          - unzip
+          - tmux
+          - nodejs
+          - xwallpaper
+          - stow
+          - neovim
+        state: present
+...

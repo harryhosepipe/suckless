@@ -1,0 +1,13 @@
+---
+- name: Set git user name
+  command: 
+    cmd: git config --global user.name "Pablo The Amazing"
+  become: yes
+  become_user: pablo
+
+- name: Set git user email
+  command:
+    cmd: git config --global user.email "pablo@renderbros.com"
+  become: yes
+  become_user: pablo
+

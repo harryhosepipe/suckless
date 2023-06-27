@@ -1,0 +1,27 @@
+  - hosts: localhost
+
+    tasks:
+      - name: Create BIN directory
+        become: yes
+        become_user: pablo
+        file:
+          path: "~/bin"
+          state: directory
+
+      - name: Add BIN dir to PATH
+        lineinfile:
+          dest: "/home/pablo/.bashrc"
+          regexp: '^export PATH.*'
+          line: 'export PATH="$HOME/bin:$PATH"'
+          state: present
+          insertafter: EOF
+          backup: yes
+        become: yes
+        become_user: pablo
+
+      - name: Source .bashrc
+        become: yes
+        become_user: pablo
+        shell:
+          cmd: "source /home/pablo/.bashrc"
+
