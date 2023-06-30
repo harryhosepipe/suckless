@@ -17,5 +17,6 @@
           - xwallpaper
           - stow
           - neovim
+          - exa
         state: present
 ...
